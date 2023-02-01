@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,14 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::controller(ReviewController::class)->middleware(['auth'])->group(function(){
+//Route::get('/reviews', 'index')->name('index');
+Route::get('/','index')->name('index');
+Route::get('/reviews/create', 'create')->name('create');
+Route::get('/reviews/{review}','show')->name('show');
+Route::post('/reviews', 'store')->name('store');
+Route::get('/reviews/{review}/edit', 'edit')->name('edit');
+Route::put('/reviews/{review}', 'update')->name('update');
+Route::delete('/reviews/{review}', 'delete')->name('delete');
+});
