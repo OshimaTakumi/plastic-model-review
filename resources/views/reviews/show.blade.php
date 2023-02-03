@@ -25,10 +25,6 @@
                 <h2>評価</h2>
                 <p class='review'>{{ $review->review }}</p>
             </div>
-            <div class="vote_average">
-                <h2>平均評価</h2>
-                <p class='vote_average'>{{ $review->vote_average }}</p>
-            </div>
             <div class="name">
                 <h2>プラモデル名</h2>
                 <p class='name'>{{ $review->name }}</p>

@@ -19,7 +19,6 @@ class Review extends Model
         'grade',
         'height',
         'runner',
-        'vote_average',
         'user_id',
         ];
         

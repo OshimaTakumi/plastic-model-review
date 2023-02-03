@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('title', 50);//口コミのタイトル
             $table->string('body', 500);//口コミの内容
             $table->string('review');//5段階の評価
-            $table->integer('vote_average');//口コミの平均点
             $table->string('name', 50);//プラモデル名
             $table->string('grade',);//グレード
             $table->integer('height', );//高さ

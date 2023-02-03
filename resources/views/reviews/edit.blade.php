@@ -29,13 +29,19 @@
             </div>
             <div class="review">
                 <h2>評価</h2>
-                <input type="text" name="review[review]" placeholder="ガンダム" value="{{ $review->review }}"/>
+                <div class="rate-form">
+                  <input id="star5" type="radio" name="review[review]" value="5">
+                  <label for="star5">★★★★★</label>
+                  <input id="star4" type="radio" name="review[review]" value="4">
+                  <label for="star4">★★★★</label>
+                  <input id="star3" type="radio" name="review[review]" value="3">
+                  <label for="star3">★★★</label>
+                  <input id="star2" type="radio" name="review[review]" value="2">
+                  <label for="star2">★★</label>
+                  <input id="star1" type="radio" name="review[review]" value="1">
+                  <label for="star1">★</label>
+                </div>
                 <p class="title_error" style="color:red">{{ $errors->first('review.review') }}</p>
-            </div>
-            <div class="vote_average">
-                <h2>平均評価</h2>
-                <input type="text" name="review[vote_average]" placeholder="ガンダム" value="{{ $review->vote_average }}"/>
-                <p class="title_error" style="color:red">{{ $errors->first('review.vote_average') }}</p>
             </div>
             <div class="name">
                 <h2>プラモデル名</h2>
@@ -44,7 +50,15 @@
             </div>
             <div class="grade">
                 <h2>グレード</h2>
-                <input type="text" name="review[grade]" placeholder="ガンダム" value="{{ $review->grade }}"/>
+                <select name="review[grade]">
+                    <option value="HG">HG</option>
+                    <option value="MG">MG</option>
+                    <option value="PG">PG</option>
+                    <option value="RG">RG</option>
+                    <option value="EG">EG</option>
+                    <option value="SD">SD</option>
+                    <option value="その他">その他</option>
+                </select>
                 <p class="title_error" style="color:red">{{ $errors->first('review.grade') }}</p>
             </div>
             <div class="height">

@@ -25,6 +25,7 @@
                         @method('DELETE')
                     <button type="button" onclick="deleteReview({{ $review->id }})">delete</button>
                     </form>
+                    <br>
                 </div>
             @endforeach
         </div>
