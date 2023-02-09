@@ -20,7 +20,7 @@
                 <div class='review'>
                    <a href="/reviews/{{ $review->id }}"><h2 class='title'>{{ $review->title }}</h2></a>
                     <p class='name'>{{ $review->name }}</p>
-                    <form action="/reviews/{{ $review->id }}" id="form_{{ $review->id }}" method="review">
+                    <form action="/reviews/{{ $review->id }}" id="form_{{ $review->id }}" method="post">
                         @csrf
                         @method('DELETE')
                     <button type="button" onclick="deleteReview({{ $review->id }})">delete</button>
