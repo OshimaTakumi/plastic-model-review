@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('likes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();//投稿者のid
-            $table->foreignId('review_id')->constrained();//コメントする口コミのid
+            $table->integer('user_id')->unsigned();//投稿者のid
+            $table->integer('review_id')->unsigned();//コメントする口コミのid
             $table->timestamps();
         });
     }

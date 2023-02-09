@@ -44,6 +44,14 @@
         <div class="edit">
             <a href="/reviews/{{ $review->id }}/edit">編集</a>
         </div>
+        
+        <div>
+            @if($review->is_liked_by_auth_user())
+                <a href="/reviews/like/{review}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $review->likes->count() }}</span></a>
+            @else
+                <a href="/reviews/unlike/{review}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $review->likes->count() }}</span></a>
+            @endif
+        </div>
         <div class="footer">
             <a href="/">戻る</a>
         </div>

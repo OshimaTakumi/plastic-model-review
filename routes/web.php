@@ -40,4 +40,9 @@ Route::post('/reviews', 'store')->name('store');
 Route::get('/reviews/{review}/edit', 'edit')->name('edit');
 Route::put('/reviews/{review}', 'update')->name('update');
 Route::delete('/reviews/{review}', 'delete')->name('delete');
+
+
+Route::get('/reviews/like/{review}', [ReviewController::class, "like"])->name('review.like');
+Route::get('/reviews/unlike/{review}', [ReviewController::class, "unlike"])->name('review.unlike');
+
 });
