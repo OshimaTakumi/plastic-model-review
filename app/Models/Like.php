@@ -13,7 +13,7 @@ class Like extends Model
       'user_id',
       ];
 
-  public function reply()
+  public function review()
   {
     return $this->belongsTo(Review::class);
   }

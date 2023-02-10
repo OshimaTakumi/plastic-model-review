@@ -17,7 +17,9 @@ class ReviewController extends Controller
 
 public function show(Review $review)
     {
-    return view('reviews/show')->with(['review' => $review]);
+      $flag=$review->likes()->where('user_id', Auth::id())->exists();
+    
+    return view('reviews/show')->with(['review' => $review,'flag'=>$flag]);
     }
     
     public function create()
@@ -68,16 +70,17 @@ public function show(Review $review)
 
     session()->flash('success', 'You Liked the Review.');
 
-    return redirect('reviews/show')->back();
+    return redirect('/reviews/' . $id);
   }
 
   public function unlike($id)
   {
     $like = Like::where('review_id', $id)->where('user_id', Auth::id())->first();
+    
     $like->delete();
 
     session()->flash('success', 'You Unliked the Review.');
 
-    return redirect('reviews/show')->back();
+    return redirect('/reviews/' . $id);
   }
 }

@@ -46,10 +46,10 @@
         </div>
         
         <div>
-            @if($review->is_liked_by_auth_user())
-                <a href="/reviews/like/{review}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $review->likes->count() }}</span></a>
+            @if($flag == false)
+                <a href="/reviews/like/{{ $review->id }}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $review->likes->count() }}</span></a>
             @else
-                <a href="/reviews/unlike/{review}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $review->likes->count() }}</span></a>
+                <a href="/reviews/unlike/{{ $review->id }}" class="btn btn-secondary btn-sm">いいね外す<span class="badge">{{ $review->likes->count() }}</span></a>
             @endif
         </div>
         <div class="footer">
