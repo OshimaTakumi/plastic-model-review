@@ -7,6 +7,7 @@ use App\Http\Requests\ReviewRequest;
 use App\Models\Review;
 use App\Models\Like;
 use Illuminate\Support\Facades\Auth;
+use Cloudinary;
 
 class ReviewController extends Controller
 {
@@ -31,6 +32,10 @@ public function show(Review $review)
     public function store(ReviewRequest $request, Review $review)
     {
         $input = $request['review'];
+        if($request->file('image')){
+        $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        $input += ['image_url' => $image_url]; 
+        }
         $input["user_id"] = auth()->id();
         $review->fill($input)->save();
         return redirect('/reviews/' . $review->id);

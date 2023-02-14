@@ -32,7 +32,6 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::controller(ReviewController::class)->middleware(['auth'])->group(function(){
-//Route::get('/reviews', 'index')->name('index');
 Route::get('/','index')->name('index');
 Route::get('/reviews/create', 'create')->name('create');
 Route::get('/reviews/{review}','show')->name('show');

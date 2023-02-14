@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('grade',);//グレード
             $table->integer('height', );//高さ
             $table->integer('runner', );//ランナーの数
+            $table->string('image_url')->nullable();//画像アップロード
             $table->timestamps();
             $table->softDeletes();
         });

@@ -20,6 +20,7 @@ class Review extends Model
         'grade',
         'height',
         'runner',
+        'image_url',
         'user_id',
         ];
         

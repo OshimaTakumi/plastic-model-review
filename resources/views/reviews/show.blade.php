@@ -41,6 +41,11 @@
                 <h2>ランナーの数</h2>
                 <p class='runner'>{{ $review->runner }}</p>
             </div>
+            @if($review->image_url)
+            <div>
+                <img src="{{ $review->image_url }}" alt="画像が読み込めません。"/>
+            </div>
+            @endif
         <div class="edit">
             <a href="/reviews/{{ $review->id }}/edit">編集</a>
         </div>

@@ -14,7 +14,7 @@
     </head>
     <body class="antialiased">
         <h1>口コミ投稿</h1>
-        <form action="/reviews" method="POST">
+        <form action="/reviews" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="title">
                 <h2>タイトル</h2>
@@ -28,18 +28,6 @@
             </div>
             <div class="review">
                 <h2>評価</h2>
-                <!--<div class="rate-form">-->
-                <!--  <input id="star5" type="radio" name="review[review]" value="5">-->
-                <!--  <label for="star5">★★★★★</label>-->
-                <!--  <input id="star4" type="radio" name="review[review]" value="4">-->
-                <!--  <label for="star4">★★★★</label>-->
-                <!--  <input id="star3" type="radio" name="review[review]" value="3">-->
-                <!--  <label for="star3">★★★</label>-->
-                <!--  <input id="star2" type="radio" name="review[review]" value="2">-->
-                <!--  <label for="star2">★★</label>-->
-                <!--  <input id="star1" type="radio" name="review[review]" value="1">-->
-                <!--  <label for="star1">★</label>-->
-                <!--</div>-->
             <div class="rate-form">
               <input id="star5" type="radio" name="review[review]" value="5">
               <label for="star5">★</label>
@@ -52,8 +40,7 @@
               <input id="star1" type="radio" name="review[review]" value="1">
               <label for="star1">★</label>
             </div>
-                
-                
+            
                 <p class="title_error" style="color:red">{{ $errors->first('review.review') }}</p>
             </div>
             <div class="name">
@@ -84,7 +71,10 @@
                 <input type="text" name="review[runner]" placeholder="10" value="{{ old('review.runner') }}"/>
                 <p class="title_error" style="color:red">{{ $errors->first('review.runner') }}</p>
             </div>
-            
+            <br>
+            <div class="image">
+                <input type="file" name="image">
+            </div>
             <input type="submit" value="store"/>
         </form>
         <div class="footer">
