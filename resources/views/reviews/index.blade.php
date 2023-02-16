@@ -14,7 +14,7 @@
     </head>
     <body class="antialiased">
         <h1>口コミ一覧</h1>
-        <a href='/reviews/create'>投稿する</a>
+        <a href='/reviews/create' class='bg-blue-500 hover:bg-blue-400 text-white rounded px-4 py-2'>投稿する</a>
         <div class='reviews'>
             @foreach ($reviews as $review)
                 <div class='review'>

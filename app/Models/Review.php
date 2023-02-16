@@ -50,6 +50,11 @@ class Review extends Model
     } else {
       return false;
     }
+  }
+//     public function review_comments()   
+// {
+//     return $this->hasMany(Review_comment::class);  
+// }
   
-}
+
 }

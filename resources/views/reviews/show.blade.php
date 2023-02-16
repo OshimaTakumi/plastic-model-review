@@ -57,6 +57,11 @@
                 <a href="/reviews/unlike/{{ $review->id }}" class="btn btn-secondary btn-sm">いいね外す<span class="badge">{{ $review->likes->count() }}</span></a>
             @endif
         </div>
+        <a href='/reviews/{{ $review->id }}/comment'>コメントする</a>
+        
+         <h1>コメント一覧</h1>
+        <div class='review_comments'>
+           
         <div class="footer">
             <a href="/">戻る</a>
         </div>

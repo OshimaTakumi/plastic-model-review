@@ -11,10 +11,11 @@ use Cloudinary;
 
 class ReviewController extends Controller
 {
-    public function index(Review $review)//インポートしたReviewをインスタンス化して$reviewとして使用。
+    public function index(Review $review)
 {
-    return view('reviews/index')->with(['reviews' => $review->get()]); //$reviewの中身を戻り値にする。
+    return view('reviews/index')->with(['reviews' => $review->get()]); 
 }
+
 
 public function show(Review $review)
     {
@@ -88,4 +89,6 @@ public function show(Review $review)
 
     return redirect('/reviews/' . $id);
   }
+  
+
 }
